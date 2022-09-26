@@ -8,8 +8,8 @@
 ### 数据库： MySQL
 
 ## 仓库管理
-- front-end 前端代码
-- back- end 后端代码
+- front-end 分支 前端代码
+- back- end 分支 后端代码
 
 ## Project setup
 ```
