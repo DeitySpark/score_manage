@@ -11,7 +11,7 @@
 - front-end 分支 前端代码
 - back- end 分支 后端代码
 
-## Project setup
+## 前端 Vue Project setup
 ```
 npm install
 ```
