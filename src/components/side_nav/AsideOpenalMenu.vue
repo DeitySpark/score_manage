@@ -1,25 +1,31 @@
 <template>
+	<el-col :span="24">
 	<el-menu
 			default-active="2"
 			class="el-menu-vertical-demo"
 			@open="handleOpen"
 			@close="handleClose"
+			:route="true"
 	>
-		<el-sub-menu v-for="(item, index) in Info.openalHandle" :key="item" :index='index'   >
+		<el-sub-menu v-for="(item, index) in Info.openalHandle" :key="item" :index='index'>
 			<template #title>
 				<el-icon>
-					<Tickets />
+					<Tickets/>
 				</el-icon>
 				<span>{{ item.title }}</span>
 			</template>
-			<el-menu-item v-for="(i, ind) in item.contain" :key="i" :index="index+'-'+ind" >
+			<el-menu-item
+					v-for="i in item.contain" :key="i"
+					:index="i.path"
+					@click="menuClick(i)">
 				<el-icon>
-					<Link />
+					<Link/>
 				</el-icon>
 				<span>{{ i.title }}</span>
 			</el-menu-item>
 		</el-sub-menu>
 	</el-menu>
+	</el-col>
 </template>
 
 <script>
@@ -37,12 +43,22 @@ export default {
     Tickets,
     Link
   },
-	methods: {
-		handleOpen(key, keyPath) {
-			console.log(key, keyPath);
-		},
-		handleClose(key, keyPath) {
-			console.log(key, keyPath);
+  methods: {
+    menuClick (item) {
+      this.$store.commit('setMenuActive', item)
+      this.$router.push(item.path)
+    }
+  },
+	setup() {
+		const handleOpen = (key, keyPath) => {
+			console.log(key, keyPath)
+		}
+		const handleClose = (key, keyPath) => {
+			console.log(key, keyPath)
+		}
+		return {
+			handleOpen,
+			handleClose
 		}
 	}
 }

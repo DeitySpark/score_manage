@@ -1,6 +1,6 @@
 <template>
 	<el-dropdown size="large" >
-		<span class="uN">{{ userName }}</span>
+		<span class="uN">{{ username }}</span>
 		<template #dropdown>
 			<el-dropdown-menu class="menu">
 				<el-dropdown-item>
@@ -18,7 +18,7 @@ export default {
   name: "UserInfo",
 	data() {
 		return {
-			userName: this.$store.state.user.username
+			username: this.$store.state.account.username
 		}
 	}
 }

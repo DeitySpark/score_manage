@@ -5,8 +5,12 @@
 				<input type="text" v-model.lazy.trim="username" class="form-control" placeholder="Username">
 			</div>
 			<div class="form-group" v-if="title==='Register'">
+				<input type="text" v-model.trim.lazy="user_id" class="form-control" placeholder="Student-ID">
+			</div>
+			<div class="form-group" v-if="title==='Register'">
 				<input type="email" v-model.trim.lazy="email" class="form-control" placeholder="E-mail">
 			</div>
+
 			<div class="form-group">
 				<input type="password" v-model.trim.lazy="password" class="form-control" placeholder="Password">
 			</div>
@@ -44,6 +48,7 @@ export default {
         { value: 'teacher', label: 'Teacher' }
       ],
       username: '',
+      user_id: '',
       email: '',
       password: '',
       role: ''
@@ -74,12 +79,15 @@ export default {
             res => {
               console.log(res)
               // 请求成功，返回响应
+              // 拿到token(role)
+
               if (res.data.code === 200) {
                 // 如果登录成功，跳转到首页
-                msg('success', res.data.msg)
-                this.$router.push({ path: '/index' })
-                console.log(res.data.data)
                 this.$store.commit('setToken', res.data.data)
+                let role = this.$store.state.account.role
+                msg('success', res.data.msg)
+                this.$router.push({ path: '/' + role + '/index' })
+                console.log(res.data.data)
               } else {
                 // 如果登录失败，弹出警告
                 msg('error', res.data.msg)
@@ -98,6 +106,7 @@ export default {
           // 创建注册信息对象
           let registerObj = {
             username: this.username,
+            user_id: this.user_id,
             email: this.email,
             password: this.password,
             role: this.role
@@ -157,7 +166,7 @@ input, select {
 
 /*输入框*/
 .login .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     background-color: #fff;
     border-radius: 4px;
     height: 30px;
@@ -173,7 +182,7 @@ input, select {
 /*选择栏*/
 .form-control {
     background-color: #fff;
-    margin: 0 auto 20px;
+    margin: 0 auto 15px;
     border-radius: 25px;
 }
 
@@ -188,7 +197,7 @@ input, select {
     cursor: pointer;
     color: #7080e8;
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 15px;
     text-align: right;
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
-
+	<div class="tea-profile">
+		<profile-info />
+	</div>
 </template>
 
 <script>
 export default {
-  name: "scoreManager"
+  name: "TeaProfile"
 }
 </script>
 

@@ -2,18 +2,27 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    user: {
+    account: {
       token: 0,
-      username: '未登录',
-      role:'Student'
+      username: 'san',
+      user_id: 1115,
+      role:'teacher'
     },
-    
+    menuInfo: {
+      title: '主页',
+      path: '/index'
+    }
   },
   mutations: {
     setToken(state, payload) {
-      state.user.token = payload.token
-      state.user.username = payload.username
-      state.user.role = payload.role
+      state.account.token = payload.token
+      state.account.username = payload.username
+      state.account.user_id = payload.user_id
+      state.account.role = payload.role
+    },
+    setMenuActive(state, payload) {
+      state.menuInfo.title = payload.title
+      state.menuInfo.path = payload.path
     }
   },
   actions: {

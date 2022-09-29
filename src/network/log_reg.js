@@ -3,7 +3,7 @@ import qs from 'qs'
 
 export function loginSub(data) {
   return request({
-    url: '/user/login',
+    url: '/account/login',
     method: 'POST',
     data: qs.stringify(data)
   })
@@ -11,7 +11,7 @@ export function loginSub(data) {
 
 export function registerSub(data) {
   return request({
-    url: '/user/register',
+    url: '/account/register',
     method: 'POST',
     data: qs.stringify(data)
   })

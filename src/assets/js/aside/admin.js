@@ -2,8 +2,12 @@ export const Info = {
   
   staticHandle: [
     {
+      title: "主页",
+      path: "/admin",
+    },
+    {
       title: "学生管理",
-      path: '/admin/students'
+      path: '/admin/stumanage'
     },
     {
       title: "教师管理",

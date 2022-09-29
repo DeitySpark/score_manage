@@ -1,5 +1,5 @@
 <template>
-	<router-view v-slot="{ Component, route }" class="view">
+	<router-view v-slot="{ Component, route }">
 		<keep-alive >
 			<component
 				:key="route.name"
