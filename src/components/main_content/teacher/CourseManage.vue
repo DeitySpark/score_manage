@@ -2,13 +2,18 @@
 	<div class="course-manage"></div>
 	<table-box class="course-table" :table-key="tableKey" :table-list="courseList">
 		<template v-slot:operation>
-			<el-button
-					type="primary"
-					round
-					size="small"
-					@click="handleEdit(scope.$index, scope.row)">
-				查看统计
-			</el-button>
+			<el-table-column label="操作">
+				<template #default="scope">
+					<el-button
+							type="primary"
+							round
+							size="small"
+							@click="countScore(scope.row)"
+					>
+						查看统计
+					</el-button>
+				</template>
+			</el-table-column>
 		</template>
 	</table-box>
 </template>
@@ -46,6 +51,11 @@ export default {
         console.log(res)
         this.courseList = res.data.data
       })
+    },
+    countScore (row) {
+      console.log(row)
+      this.$store.commit('setCountScore', row.name)
+      this.$router.push({ path: '/teacher/countscore' })
     }
   }
 }

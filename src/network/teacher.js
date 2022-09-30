@@ -19,3 +19,20 @@ export function getStudentCourse(data) {
   })
 }
 
+// 课程成绩统计
+export function getCountScore(data) {
+  return request({
+    url: '/score/countscore',
+    method: 'POST',
+    data: qs.stringify(data)
+  })
+}
+
+// 成绩修改
+export function updateScore(data) {
+  return request({
+    url: '/score/updatescore',
+    method: 'POST',
+    data: qs.stringify(data)
+  })
+}

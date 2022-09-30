@@ -1,15 +1,15 @@
 /* eslint-disable */
 import { ElMessage} from "element-plus";
 
-const msg = (fun, message) => {
-  if (fun === 'message') {
-    message(message)
+const msg = (fun, messages) => {
+  if (fun === 'messages') {
+    message(messages)
   } else if (fun === 'success') {
-    success(message)
+    success(messages)
   } else if (fun === 'warning') {
-    warning(message)
+    warning(messages)
   } else if (fun === 'error') {
-    error(message)
+    error(messages)
   }
 }
 const message = (message) => {

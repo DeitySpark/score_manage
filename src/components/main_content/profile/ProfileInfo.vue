@@ -20,19 +20,22 @@
 			</el-col>
 		</el-form-item>
 	</el-form>
-	<el-form :model="form2" label-width="120px" disabled class="profile-form">
-		<el-form-item v-for="item in form2" :key="item" :label="item.title">
-			<el-input v-model="item.value"/>
-		</el-form-item>
-	</el-form>
+	<div class="profile-form">
+		<form-input-box :form="form2" class="profile-form-item"/>
+	</div>
+
 </template>
 
 <script>
 import { getStudentInfo } from '@/network/student'
 import { getTeacherInfo } from '@/network/teacher'
+import FormInputBox from '@/components/common/FormInputBox'
 
 export default {
   name: "ProfileInfo",
+  components: {
+    FormInputBox
+  },
   data () {
     return {
       form1: {
@@ -41,13 +44,7 @@ export default {
         sex: {},
         birthday: {}
       },
-      form2: {
-        address: {},
-        college: {},
-        major: {},
-        credits: {},
-        GPA: {}
-      },
+      form2: [],
       username: this.$store.state.account.username,
       user_id: this.$store.state.account.user_id,
       role: this.$store.state.account.role
@@ -63,13 +60,23 @@ export default {
         getStudentInfo({ username: this.username }).then(res => {
           console.log(res)
           this.form1 = res.data.data[0]
-          this.form2 = res.data.data[1]
+          let form2 = res.data.data[1]
+          for(let i in form2) {
+            form2[i]['disabled'] = 1
+          }
+          console.log(form2)
+          this.form2 = form2
         })
       } else if (this.role === 'teacher') {
         getTeacherInfo({ user_id: this.user_id }).then(res => {
           console.log(res)
           this.form1 = res.data.data[0]
-          this.form2 = res.data.data[1]
+          let form2 = res.data.data[1]
+          for(let i in form2) {
+						form2[i]['disabled'] = 1
+					}
+          console.log(form2)
+          this.form2 = form2
         })
       } else {
         // getAdminInfo({ username: this.username }).then(res => {
@@ -85,5 +92,9 @@ export default {
 .profile-form {
     margin: 20px;
     max-width: 700px;
+}
+
+.profile-form-item {
+    margin: 0 80px;
 }
 </style>

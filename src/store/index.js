@@ -2,16 +2,20 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    // 用户信息
     account: {
       token: 0,
       username: 'san',
       user_id: 1115,
       role:'teacher'
     },
+    // 点击的侧边栏功能
     menuInfo: {
       title: '主页',
       path: '/index'
-    }
+    },
+    // 需要统计的课程
+    countScoreCourse: ''
   },
   mutations: {
     setToken(state, payload) {
@@ -23,6 +27,9 @@ export default createStore({
     setMenuActive(state, payload) {
       state.menuInfo.title = payload.title
       state.menuInfo.path = payload.path
+    },
+    setCountScore(state, payload) {
+      state.countScoreCourse = payload
     }
   },
   actions: {

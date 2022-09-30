@@ -35,7 +35,7 @@
 import { ref } from 'vue'
 import { loginSub, registerSub } from '@/network/log_reg'
 import 'element-plus/theme-chalk/el-message.css'
-import { msg } from '@/components/login/InformMsg'
+import { msg } from '@/assets/js/InformMsg'
 
 export default {
   name: "LoginBox",

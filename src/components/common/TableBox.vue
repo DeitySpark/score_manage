@@ -1,12 +1,7 @@
 <template>
 	<el-table :data="tableList" stripe style="width: 100%" height="520" class="table">
 		<el-table-column :prop="item.value" :label="item.title" v-for="item in tableKey" :key="item"/>
-		<el-table-column label="Operations" v-if="role!=='student'">
-<!--			 eslint-disable-next-line-->
-			<template #default="scope">
-				<slot name="operation"></slot>
-			</template>
-		</el-table-column>
+		<slot name="operation"></slot>
 	</el-table>
 </template>
 <script>

@@ -81,6 +81,14 @@ const routes = [
           teaTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/teacher/CourseManage.vue')
         }
       },
+      // 课程数据统计
+      {
+        path: 'countscore',
+        name: 'CountScore',
+        components: {
+          teaTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/teacher/CountScore.vue')
+        }
+      },
       // 个人信息
       {
         path: 'profile',
