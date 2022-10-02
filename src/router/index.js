@@ -78,7 +78,7 @@ const routes = [
         path: 'course',
         name: 'ScoreManage',
         components: {
-          teaTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/teacher/CourseManage.vue')
+          teaTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/teacher/TeaCourseManage.vue')
         }
       },
       // 课程数据统计
@@ -127,6 +127,71 @@ const routes = [
         name: 'StudentManage',
         components: {
           adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/StudentManage.vue')
+        }
+      },
+      // 教师管理
+      {
+        path: 'teamanage',
+        name: 'TeacherManage',
+        components: {
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/TeacherManage.vue')
+        }
+      },
+    //  课程管理
+      {
+        path: 'coursemanage',
+        name: 'CourseManage',
+        components: {
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/CourseManage.vue')
+        }
+      },
+      // 专业管理
+      {
+        path: 'majormanage',
+        name: 'MajorManage',
+        components: {
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/MajorManage.vue')
+        }
+      },
+      // 账号管理
+      // 学生账号管理
+      {
+        path: 'stuaccount',
+        name: 'StuAccount',
+        components: {
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/account_manage/StuAccountM')
+        }
+      },
+      // 教师账号管理
+      {
+        path: 'teaaccount',
+        name: 'TeaAccount',
+        components: {
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/account_manage/TeaAccountM')
+        }
+      },
+      // 管理员账号管理
+      {
+        path: 'adminaccount',
+        name: 'AdminAccount',
+        components: {
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/account_manage/AdminAccountM')
+        }
+      },
+      // 个人信息
+      {
+        path: 'profile',
+        name: 'AdminProfile',
+        components: {
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/AdminProfile.vue')
+        }
+      },
+      // 修改密码
+      {
+        path: 'updatepwd',
+        name: 'AdminUpdatePwd',
+        components: {
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/AdminUpdatePwd.vue')
         }
       }
     ]

@@ -2,7 +2,7 @@ export const Info = {
   staticHandle: [
     {
       title: "主页",
-      path: "/teacher",
+      path: "/teacher/index",
     },
     {
     title: "课程管理",

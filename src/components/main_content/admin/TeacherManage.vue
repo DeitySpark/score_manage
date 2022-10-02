@@ -1,5 +1,5 @@
 <template>
-	<div class="student-manage">
+	<div class="teacher-manage">
 		<data-show :table-list="tableList" :table-key="tableKey">
 			<template v-slot:Edit>
 				<el-button
@@ -15,37 +15,32 @@
 </template>
 
 <script>
-import DataShow from "./DataShow";
-import { StudentManageList } from '@/network/admin'
+import { TeacherManageList } from '@/network/admin'
+
 export default {
-  name: "StudentManage",
-  components: {
-    DataShow
-  },
+  name: "TeacherManage",
   data () {
     return {
       tableKey: [
-        { title: '学号', value: 'stu_id', sortable: 1},
+        { title: '教师编号', value: 'tea_id' },
         { title: '姓名', value: 'name' },
         { title: '性别', value: 'sex' },
-        { title: '昵称', value: 'username' },
+        { title: '籍贯', value: 'address' },
         { title: '学院', value: 'college' },
-        { title: '专业 ', value: 'major' },
-        { title: '学分 ', value: 'credits' },
       ],
       tableList: []
     }
   },
-	mounted () {
-    this._StudentManageList()
+  mounted () {
+    this._TeacherManageList()
   },
   methods: {
-    _StudentManageList () {
-      StudentManageList().then(res => {
-				this.tableList = res.data.data
-			})
+    _TeacherManageList () {
+      TeacherManageList().then(res => {
+        this.tableList = res.data.data
+      })
     }
-	}
+  }
 }
 </script>
 

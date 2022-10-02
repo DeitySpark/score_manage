@@ -24,7 +24,7 @@
 
 <script>
 import HeaderNav from '@/components/header_nav/HeaderNav'
-import { Info } from '@/assets/js/aside/admin'
+import { Info } from '@/router/aside/admin'
 
 export default {
   name: 'AdminView',

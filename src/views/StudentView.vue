@@ -25,7 +25,7 @@
 <script>
 import HeaderNav from '@/components/header_nav/HeaderNav'
 // import TabBox from '@/components/main_content/TabBox'
-import { Info } from '@/assets/js/aside/student'
+import { Info } from '@/router/aside/student'
 
 export default {
   name: 'IndexView',

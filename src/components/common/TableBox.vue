@@ -1,6 +1,14 @@
 <template>
-	<el-table :data="tableList" stripe style="width: 100%" height="520" class="table">
-		<el-table-column :prop="item.value" :label="item.title" v-for="item in tableKey" :key="item"/>
+	<el-table :data="tableList"
+          stripe style="width: 100%"
+          height="500"
+          class="table">
+		<el-table-column
+				:prop="item.value"
+				:label="item.title"
+				:sortable="item.sortable"
+				v-for="item in tableKey"
+				:key="item"/>
 		<slot name="operation"></slot>
 	</el-table>
 </template>
@@ -26,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-.table{
-		text-align: center;
+.table {
+    text-align: center;
 }
 </style>

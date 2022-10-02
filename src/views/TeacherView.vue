@@ -24,7 +24,7 @@
 
 <script>
 import HeaderNav from '@/components/header_nav/HeaderNav'
-import { Info } from '@/assets/js/aside/teacher'
+import { Info } from '@/router/aside/teacher'
 
 export default {
   name: 'TeacherView',

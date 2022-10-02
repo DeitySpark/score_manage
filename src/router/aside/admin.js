@@ -3,7 +3,7 @@ export const Info = {
   staticHandle: [
     {
       title: "主页",
-      path: "/admin",
+      path: "/admin/index",
     },
     {
       title: "学生管理",
@@ -11,19 +11,15 @@ export const Info = {
     },
     {
       title: "教师管理",
-      path: '/admin/teacher'
+      path: '/admin/teamanage'
     },
     {
       title: "课程管理",
-      path: '/admin/course'
+      path: '/admin/coursemanage'
     },
     {
       title: "专业管理",
-      path: '/admin/major'
-    },
-    {
-      title: "专业选课",
-      path: '/admin/majcourse'
+      path: '/admin/majormanage'
     }
   ],
   
@@ -41,7 +37,7 @@ export const Info = {
       contain:
         [
           {title: '个人信息', path: '/admin/profile'},
-          { title: '修改密码', path: '/admin/update'}
+          { title: '修改密码', path: '/admin/updatepwd'}
         ],
     }
   ]

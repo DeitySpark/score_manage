@@ -3,7 +3,7 @@
 ## 全栈练手小项目————成绩管理系统
 ### 设计软件： MasterGo
 ### UI： Element plus UI
-### 前端 ： Vue + Vue-router + Vuex + axios
+### 前端 ： Vue cli3 + Vue-router + Vuex + axios + Chart.js
 ### 后端 ： python Flask
 ### 数据库： MySQL
 
@@ -34,37 +34,52 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## 后端路由地址
+## 后端目录树
 ```
-Map([<Rule '/static/<filename>' (GET, OPTIONS, HEAD) -> static>,
- <Rule '/account/register/' (OPTIONS, POST) -> account.register>,
- <Rule '/account/login/' (GET, OPTIONS, POST, HEAD) -> account.login>,
- <Rule '/account/update/password' (OPTIONS, POST) -> account.update_password>,
- <Rule '/account/update/info' (OPTIONS, POST) -> account.update_info>,
- <Rule '/teacher/getallteacher' (GET, OPTIONS, POST, HEAD) -> teacher.get_all_teacher>,
- <Rule '/teacher/addteacher' (OPTIONS, POST) -> teacher.add_teacher>,
- <Rule '/teacher/updateteacher' (OPTIONS, POST) -> teacher.update_teacher>,
- <Rule '/teacher/deleteteacher' (OPTIONS, POST) -> teacher.delete_teacher>,
- <Rule '/major/getallmajor' (GET, OPTIONS, POST, HEAD) -> major.get_all_major>,
- <Rule '/major/getmajor' (GET, OPTIONS, POST, HEAD) -> major.get_major>,
- <Rule '/major/addmajor' (OPTIONS, POST) -> major.add_major>,
- <Rule '/major/deletemajor' (OPTIONS, POST) -> major.delete_major>,
- <Rule '/student/getinfo' (GET, OPTIONS, POST, HEAD) -> student.get_info>,
- <Rule '/student/update_info' (OPTIONS, POST) -> student.update_info>,
- <Rule '/student/add_info' (OPTIONS, POST) -> student.add_info>,
- <Rule '/student/delete_info' (OPTIONS, POST) -> student.delete_info>,
- <Rule '/admin/getalladmin' (GET, OPTIONS, POST, HEAD) -> admin.get_all_admin>,
- <Rule '/admin/addadmin' (OPTIONS, POST) -> admin.add_admin>,
- <Rule '/admin/deleteadmin' (OPTIONS, POST) -> admin.delete_admin>,
- <Rule '/admin/updateadmin' (OPTIONS, POST) -> admin.update_admin>,
- <Rule '/course/getallcourse' (GET, OPTIONS, POST, HEAD) -> course.get_all_course>,
- <Rule '/course/getcourse' (GET, OPTIONS, POST, HEAD) -> course.get_course>,
- <Rule '/course/addcourse' (OPTIONS, POST) -> course.add_course>,
- <Rule '/course/deletecourse' (OPTIONS, POST) -> course.delete_course>,
- <Rule '/course/updatecourse' (OPTIONS, POST) -> course.update_course>,
- <Rule '/score/getscore' (GET, OPTIONS, POST, HEAD) -> score.get_score>,
- <Rule '/score/addscore' (OPTIONS, POST) -> score.add_score>,
- <Rule '/score/updatescore' (OPTIONS, POST) -> score.update_score>,
- <Rule '/score/countscore' (GET, OPTIONS, POST, HEAD) -> score.count_score>,
- <Rule '/score/deletescore' (OPTIONS, POST) -> score.delete_score>])
+│  app.py   # 后端主程序
+│  settings.py   # 后端配置文件
+├─apps  
+│  │  model.py   # 数据库模型创建
+│  │  utils.py   # 工具函数
+│  │  __init__.py   # flask初始化
+│  │
+│  ├─account    # 账户模块
+│  │  │  model.py   # 账户模型创建
+│  │  │  view.py    # 账户视图函数
+│  │  │  __init__.py    # 账户蓝图注册
+│  │  │
+│  ├─admin  # 管理员模块
+│  │  │  model.py   # 管理员模型创建
+│  │  │  view.py    # 管理员视图函数
+│  │  │  __init__.py    # 管理员蓝图注册
+│  │  │
+│  ├─course   # 课程模块
+│  │  │  model.py   # 课程模型创建
+│  │  │  view.py    # 课程视图函数
+│  │  │  __init__.py    # 课程蓝图注册
+│  │
+│  ├─major  # 专业模块
+│  │  │  model.py   # 专业模型创建
+│  │  │  view.py    # 专业视图函数
+│  │  │  __init__.py    # 专业蓝图注册
+│  │
+│  ├─score  # 成绩模块
+│  │  │  model.py   # 成绩模型创建
+│  │  │  view.py    # 成绩视图函数
+│  │  │  __init__.py    # 成绩蓝图注册
+│  │
+│  ├─student    # 学生模块
+│  │  │  model.py   # 学生模型创建
+│  │  │  view.py    # 学生视图函数
+│  │  │  __init__.py    # 学生蓝图注册
+│  │
+│  ├─teacher    # 教师模块
+│  │  │  model.py   # 教师模型创建
+│  │  │  view.py    # 教师视图函数
+│  │  │  __init__.py    # 教师蓝图注册
+│
+├─static    # 静态文件
+├─templates   # 模板文件
+
+
 ```

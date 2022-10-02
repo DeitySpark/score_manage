@@ -1,27 +1,15 @@
 <template>
-	<div class="student-manage">
+	<div class="account-manage">
 		<data-show :table-list="tableList" :table-key="tableKey">
-			<template v-slot:Edit>
-				<el-button
-						type="primary"
-						round
-						size="small"
-						@click="Edit(scope.row)">
-					详情
-				</el-button>
-			</template>
 		</data-show>
 	</div>
 </template>
 
 <script>
-import DataShow from "./DataShow";
 import { StudentManageList } from '@/network/admin'
+
 export default {
-  name: "StudentManage",
-  components: {
-    DataShow
-  },
+  name: "AdminAccountM",
   data () {
     return {
       tableKey: [
@@ -36,16 +24,16 @@ export default {
       tableList: []
     }
   },
-	mounted () {
+  mounted () {
     this._StudentManageList()
   },
   methods: {
     _StudentManageList () {
       StudentManageList().then(res => {
-				this.tableList = res.data.data
-			})
+        this.tableList = res.data.data
+      })
     }
-	}
+  }
 }
 </script>
 
