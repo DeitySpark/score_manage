@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     getProfileInfo () {
-      console.log(this.username)
+      // console.log(this.username)
       if (this.role === 'student') {
         getStudentInfo({ username: this.username }).then(res => {
           console.log(res)
@@ -64,24 +64,19 @@ export default {
           for(let i in form2) {
             form2[i]['disabled'] = 1
           }
-          console.log(form2)
+          // console.log(form2)
           this.form2 = form2
         })
-      } else if (this.role === 'teacher') {
+      } else {
         getTeacherInfo({ user_id: this.user_id }).then(res => {
-          console.log(res)
           this.form1 = res.data.data[0]
           let form2 = res.data.data[1]
           for(let i in form2) {
 						form2[i]['disabled'] = 1
 					}
-          console.log(form2)
+          // console.log(form2)
           this.form2 = form2
         })
-      } else {
-        // getAdminInfo({ username: this.username }).then(res => {
-        //   console.log(res)
-        // })
       }
     }
   }

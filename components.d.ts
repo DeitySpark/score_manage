@@ -7,7 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AdminAccountM: typeof import('./src/components/main_content/admin/account_manage/AdminAccountM.vue')['default']
+    AccountManage: typeof import('./src/components/main_content/admin/AccountManage.vue')['default']
     AdminProfile: typeof import('./src/components/main_content/admin/AdminProfile.vue')['default']
     AdminUpdatePwd: typeof import('./src/components/main_content/admin/AdminUpdatePwd.vue')['default']
     AsideList: typeof import('./src/components/side_nav/AsideList.vue')['default']
@@ -52,12 +52,10 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScoreManager: typeof import('./src/components/main_content/student/ScoreManager.vue')['default']
-    StuAccountM: typeof import('./src/components/main_content/admin/account_manage/StuAccountM.vue')['default']
     StudentManage: typeof import('./src/components/main_content/admin/StudentManage.vue')['default']
     StuProfile: typeof import('./src/components/main_content/student/StuProfile.vue')['default']
     TabBox: typeof import('./src/components/main_content/TabBox.vue')['default']
     TableBox: typeof import('./src/components/common/TableBox.vue')['default']
-    TeaAccountM: typeof import('./src/components/main_content/admin/account_manage/TeaAccountM.vue')['default']
     TeacherManage: typeof import('./src/components/main_content/admin/TeacherManage.vue')['default']
     TeaCourseManage: typeof import('./src/components/main_content/teacher/TeaCourseManage.vue')['default']
     TeaProfile: typeof import('./src/components/main_content/teacher/TeaProfile.vue')['default']

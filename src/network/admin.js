@@ -36,11 +36,18 @@ export function MajorManageList(data) {
   })
 }
 
-
-// 获取管理员信息
-export function getTeacherInfo(data) {
+// 获取账号信息
+export function AccountManageList(data) {
   return request({
-    url: '/student/get',
+    url: '/account/get',
+    method: 'POST',
+    data: qs.stringify(data)
+  })
+}
+// 获取管理员信息
+export function getAdminInfo(data) {
+  return request({
+    url: '/admin/getinfo',
     method: 'POST',
     data: qs.stringify(data)
   })

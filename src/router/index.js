@@ -154,28 +154,12 @@ const routes = [
         }
       },
       // 账号管理
-      // 学生账号管理
+      // 账号管理
       {
-        path: 'stuaccount',
+        path: 'account/:role',
         name: 'StuAccount',
         components: {
-          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/account_manage/StuAccountM')
-        }
-      },
-      // 教师账号管理
-      {
-        path: 'teaaccount',
-        name: 'TeaAccount',
-        components: {
-          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/account_manage/TeaAccountM')
-        }
-      },
-      // 管理员账号管理
-      {
-        path: 'adminaccount',
-        name: 'AdminAccount',
-        components: {
-          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/account_manage/AdminAccountM')
+          adminTable: () => import(/* webpackChunkName: "score" */ '@/components/main_content/admin/AccountManage.vue')
         }
       },
       // 个人信息

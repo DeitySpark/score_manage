@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-.update-pwd{
+.tea-update-pwd{
     background-color: #fff;
 }
 </style>

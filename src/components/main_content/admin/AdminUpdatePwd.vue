@@ -1,6 +1,6 @@
 <template>
 	<div class="admin-update-pwd">
-
+		<update-psd />
 	</div>
 </template>
 
@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style scoped>
-
+.admin-update-pwd{
+    background-color: #fff;
+}
 </style>

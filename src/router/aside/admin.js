@@ -27,9 +27,9 @@ export const Info = {
     {
       title: "账号管理",
       contain: [
-        { title: '学生账号', path: '/admin/stuaccount' },
-        { title: '教师账号', path: '/admin/teaaccount' },
-        { title: '管理员账号', path: '/admin/adminaccount' }
+        { title: '学生账号', path: '/admin/account/student' },
+        { title: '教师账号', path: '/admin/account/teacher' },
+        { title: '管理员账号', path: '/admin/account/admin' }
       ]
     },
     {
