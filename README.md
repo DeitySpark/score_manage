@@ -44,6 +44,7 @@ npm run lint
 ### 前端目录树
 ```
 │  App.vue
+|
 │  main.js
 │
 ├─assets    // 静态资源
