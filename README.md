@@ -11,7 +11,18 @@
 - front-end 分支 前端代码
 - back- end 分支 后端代码
 
+## 界面展示
+![](public/界面/注册.png)
+![](public/界面/登录.png)
+![](public/界面/主页.png)
+![](public/界面/学生_个人信息.png)
+![](public/界面/学生_课程管理.png)
+![](public/界面/教师_成绩管理.png)
+![](public/界面/教师_成绩统计.png)
+![](public/界面/教师信息管理.png)
+![](public/界面/管理员.png)
 ## 前端 Vue Project setup
+### 安装依赖，运行项目
 ```
 npm install
 ```
@@ -30,10 +41,104 @@ npm run build
 ```
 npm run lint
 ```
+### 前端目录树
+```
+│  App.vue
+│  main.js
+│
+├─assets    // 静态资源
+│  ├─css
+│  │      base.css      // 基础样式
+│  │      header_nav.css    // 头部导航栏样式
+│  │
+│  ├─img
+│  │      background.jpg     // 背景图片
+│  │      index_nav.png     // 首页导航栏图片
+│  │      logo.png      // logo图片
+│  │
+│  ├─js
+│  │      InformMsg.js  // 信息提示框
+│  │
+│  └─lib        // 第三方库
+│      └─iconfont       // 阿里字体图标库
+│              iconfont.css
+│              iconfont.ttf
+│
+├─components    // 组件
+│  ├─common    // 公共组件文件夹
+│  │      ChartBox.vue   // 图表组件
+│  │      FormInputBox.vue  
+│  │      TableBox.vue      // 表格组件
+│  │
+│  ├─header_nav      // 头部导航栏文件夹
+│  │      HeaderNav.vue     // 头部导航栏组件
+│  │      UserInfo.vue  
+│  │
+│  ├─login  // 登录页面文件夹
+│  │      LoginBox.vue
+│  │
+│  ├─main_content    // 内容框文件夹
+│  │  │  IndexContent.vue
+│  │  │  TabBox.vue     // 标签组件
+│  │  │
+│  │  ├─admin   // 管理员文件夹
+│  │  │      AccountManage.vue      // 账号管理
+│  │  │      AdminProfile.vue       // 个人信息
+│  │  │      AdminUpdatePwd.vue     // 修改密码
+│  │  │      CourseManage.vue       // 课程管理
+│  │  │      DataShow.vue       // 表格组件封装，数据展示
+│  │  │      MajorManage.vue        // 专业管理
+│  │  │      StudentManage.vue      // 学生管理
+│  │  │      TeacherManage.vue      // 教师管理
+│  │  │
+│  │  ├─home    // 首页文件夹
+│  │  │      HomeContent.vue
+│  │  │
+│  │  ├─profile   // 个人信息文件夹，未封装
+│  │  │      ProfileInfo.vue
+│  │  │      UpdatePsd.vue
+│  │  │
+│  │  ├─student     // 学生端文件夹
+│  │  │      ScoreManager.vue
+│  │  │      StuProfile.vue
+│  │  │      UpdatePwd.vue
+│  │  │
+│  │  └─teacher    // 教师端文件夹
+│  │          CountScore.vue
+│  │          TeaCourseManage.vue
+│  │          TeaProfile.vue
+│  │          TeaUpdatePwd.vue
+│  │
+│  └─side_nav       // 侧边导航栏文件夹
+│          AsideList.vue
+│          AsideOpenalMenu.vue   // 侧边可打开菜单组件
+│          AsideStaticMenu.vue
+│
+├─network       // 网络请求
+│      admin.js     // 管理员请求    
+│      log_reg.js       // 登录注册请求
+│      request.js       // axios封装
+│      student.js       // 学生请求
+│      teacher.js       // 教师请求
+│
+├─router        // 路由
+│  │  index.js      // 路由配置
+│  │
+│  └─aside      // 侧边菜单对应的路由
+│          admin.js
+│          student.js
+│          teacher.js
+│
+├─store     // vuex状态管理
+│      index.js
+│   
+└─views     // 页面
+        AdminView.vue
+        LoginView.vue
+        StudentView.vue
+        TeacherView.vue
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
+```
 ## 后端目录树
 ```
 │  app.py   # 后端主程序
@@ -81,5 +186,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ├─static    # 静态文件
 ├─templates   # 模板文件
 
-
 ```
+## 数据库设计
+![](public/数据库设计/MySQL.png)
