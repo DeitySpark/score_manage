@@ -12,15 +12,15 @@
 - back- end 分支 后端代码
 
 ## 界面展示
-![](public/界面/注册.png)
-![](public/界面/登录.png)
-![](public/界面/主页.png)
-![](public/界面/学生_个人信息.png)
-![](public/界面/学生_课程管理.png)
-![](public/界面/教师_成绩管理.png)
-![](public/界面/教师_成绩统计.png)
-![](public/界面/教师信息管理.png)
-![](public/界面/管理员.png)
+![](web/public/界面/注册.png)
+![](web/public/界面/登录.png)
+![](web/public/界面/主页.png)
+![](web/public/界面/学生_个人信息.png)
+![](web/public/界面/学生_课程管理.png)
+![](web/public/界面/教师_成绩管理.png)
+![](web/public/界面/教师_成绩统计.png)
+![](web/public/界面/教师信息管理.png)
+![](web/public/界面/管理员.png)
 ## 前端 Vue Project setup
 ### 安装依赖，运行项目
 ```
